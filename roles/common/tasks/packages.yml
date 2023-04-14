@@ -1,0 +1,21 @@
+---
+
+- name: Make apt update
+  apt: 
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Upgrade all packages
+  apt:
+    upgrade: 'True'
+
+- name: Install common apt packages
+  apt:
+    name: "{{ common_apt_packages }}"
+    state: latest
+
+- name: Install common pip packages
+  pip:
+    name: "{{ common_pip_packages }}"
+    state: latest
+

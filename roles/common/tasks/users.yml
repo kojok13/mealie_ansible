@@ -1,0 +1,10 @@
+---
+
+- name: Add mealie user
+  user:
+    name: mealie
+    state: present
+    shell: /bin/bash
+    home: "{{ mealie_home_directory }}"
+    password: "{{ mealie_user_password }}"
+     

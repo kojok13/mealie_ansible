@@ -1,0 +1,9 @@
+---
+
+- name: Import iptables rules
+  shell: iptables-save > /etc/iptables/rules.v4
+
+- name: Enable netfilter-persistent service
+  service:
+    name: netfilter-persistent
+    enabled: true

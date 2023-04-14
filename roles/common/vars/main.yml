@@ -1,0 +1,17 @@
+---
+
+common_apt_packages:
+  - git
+  - htop
+  - mc
+  - python3
+  - python3-pip
+  - vim
+  - nano
+  - curl
+  - nmap
+  - iptables
+  - iptables-persistent
+common_pip_packages:
+  - docker
+  - docker-compose

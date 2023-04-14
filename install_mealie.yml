@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: yes
+  roles:
+    - common
+    - geerlingguy.docker
+
+- hosts: app
+  become_user: mealie
+  roles:  
+    - app
+
+- hosts: db
+  become_user: mealie 
+  roles:
+    - db

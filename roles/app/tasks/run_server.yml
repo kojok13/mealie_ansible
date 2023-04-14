@@ -1,0 +1,23 @@
+---
+
+- name: Create home catalog
+  file:
+    path: "{{ mealie_home_directory }}/app/"
+    state: directory
+    mode: 0644
+    owner: mealie
+
+- name: Copy docker-compose file
+  template:
+    src: docker-compose.j2
+    dest: "{{ mealie_home_directory }}/app/docker-compose.yml"
+    mode: 0644
+    owner: mealie
+    
+- name: Run mealie server
+  community.docker.docker_compose:
+    project_name: app
+    project_src: "{{ mealie_home_directory }}/app/"
+    files: docker-compose.yml
+    state: present
+    restarted: true

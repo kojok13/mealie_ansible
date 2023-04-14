@@ -1,0 +1,6 @@
+---
+
+ansible_check_mode: "false"
+mealie_home_directory: /home/mealie
+host_app_address: 192.168.100.21
+host_db_address: 192.168.100.22
